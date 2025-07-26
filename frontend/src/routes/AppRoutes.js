@@ -2,12 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginPage from "../features/LoginPage";
 import RegisterPage from "../features/RegisterPage";
+import HomePage from "../features/HomePage";
 
 const Home = () => (
-  <div>
-    <h2>Home</h2>
-    <p>Welcome to UNS Family Data!</p>
-  </div>
+  <HomePage />
 );
 
 const AppRoutes = () => (
