@@ -30,7 +30,7 @@ const HomePage = () => {
 
   return (
     <div>
-      {/* <Header onLogin={handleLogin} onSignup={handleSignup} /> */}
+      <Header onLogin={handleLogin} onSignup={handleSignup} />
 
       {/* Hero Section */}
       <section className="text-white text-center">
@@ -54,7 +54,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

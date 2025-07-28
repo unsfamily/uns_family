@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 
 const Header = ({ onLogin, onSignup }) => {
-   const [isSticky, setIsSticky] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,34 +15,31 @@ const Header = ({ onLogin, onSignup }) => {
 
   return (
     <header
-      className={`text-white w-full top-0 z-50 transition-all duration-300 ${
-        isSticky ? 'fixed bg-gradient-to-r from-white-700 to-emerald-600 shadow-md' : 'bg-green-700'
+      className={`text-white bg-gradient-to-r w-full top-0 z-50 transition-all duration-300 ${
+        isSticky ? 'fixed bg-gradient-to-r from-green-900 to-emerald-600 shadow-md' : 'bg-white-700'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="#">
+        <Link to="/">
           <img src="images/logo.png" alt="Logo" className="w-24" />
-        </a>
+        </Link>
         <div className="flex space-x-4">
-          <a
-            href="#"
-            onClick={onLogin}
-            className="text-white hover:underline"
+          <Link
+            to="/login"
+            className="text-black hover:underline"
           >
             Sign In
-          </a>
-          <a
-            href="#"
-            onClick={onSignup}
-            className="text-white hover:underline"
+          </Link>
+          <Link
+            to="/register"
+            className="text-black hover:underline"
           >
             Sign Up
-          </a>
+          </Link>
         </div>
       </div>
     </header>
   );
 };
-
 
 export default Header;
