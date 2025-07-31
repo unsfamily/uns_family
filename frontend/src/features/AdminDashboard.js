@@ -7,14 +7,15 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
   return (
     <>
       {/* Header */}
-      <header className="w-full bg-gray-100 py-4 shadow-md text-center text-xl font-semibold">
-        Employee Details
-      </header>
+     <header />
 
-      <div className="px-4 py-6 max-w-7xl mx-auto">
+      <div className="px-4 sm:px-6 lg:px-20 mx-auto">
+         <div className="py-4 text-center text-xl font-semibold">
+        Employee Details
+      </div>
         {/* =============================== Personal Details =============================== */}
         <section className="mb-8">
-          <h2 className="text-lg font-bold bg-blue-100 p-2 rounded">Personal Details</h2>
+          <h2 className="text-lg font-bold bg-green-100 text-green-700 p-2 rounded">Personal Details</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 bg-white shadow rounded">
             <Detail label="First Name" value={employeeDetails?.first_name} />
             <Detail label="Last Name" value={employeeDetails?.last_name} />
@@ -41,7 +42,7 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
 
         {/* =============================== Contact Details =============================== */}
         <section className="mb-8">
-          <h2 className="text-lg font-bold bg-blue-100 p-2 rounded">Contact Details</h2>
+          <h2 className="text-lg font-bold bg-green-100 p-2 rounded">Contact Details</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-white shadow rounded">
             <SplitDetail label1="Code" value1={employeeDetails?.country_code} label2="Mobile Number" value2={employeeDetails?.mobile_number} />
             <SplitDetail label1="Code" value1={employeeDetails?.alt_country_code} label2="Alternative Mobile Number" value2={employeeDetails?.alternative_number} />
@@ -60,7 +61,7 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
 
         {/* =============================== Pan Details =============================== */}
         <section className="mb-8">
-            <h2 className="text-lg font-bold bg-blue-100 p-2 rounded">Taxpayer Details</h2>
+            <h2 className="text-lg font-bold bg-green-100 p-2 rounded">Taxpayer Details</h2>
             <div className="p-4 bg-white shadow rounded grid grid-cols-1 md:grid-cols-2 gap-4">
 
                 <div>
@@ -86,7 +87,7 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
 
 {/* =============================== aadhar details =============================== */}
         <section className="mb-8">
-            <h2 className="text-lg font-bold bg-blue-100 p-2 rounded">National Identity Card</h2>
+            <h2 className="text-lg font-bold bg-green-100 p-2 rounded">National Identity Card</h2>
 
             <div className="p-4 bg-white shadow rounded">
                 {/* Identity Card Number */}
@@ -133,7 +134,7 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
         
 {/* =============================== address details =============================== */}        
         <section className="mb-8">
-            <h2 className="text-lg font-bold bg-blue-100 p-2 rounded">Address Details</h2>
+            <h2 className="text-lg font-bold bg-green-100 p-2 rounded">Address Details</h2>
 
             <div className="p-4 bg-white shadow rounded">
                 {/* Permanent Address */}
@@ -162,7 +163,7 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
 
 {/* =============================== education details =============================== */}  
         <section className="mb-8">
-            <h2 className="text-lg font-bold bg-blue-100 p-2 rounded">Education Details</h2>
+            <h2 className="text-lg font-bold bg-green-100 p-2 rounded">Education Details</h2>
 
             <div className="p-4 bg-white shadow rounded grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <Detail label="Highest Qualification" value={employeeDetails?.highest_qualification} />
@@ -196,13 +197,13 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
 
 {/* =============================== Work / Business Experience =============================== */}  
         <section className="mb-8">
-            <h2 className="text-lg font-bold bg-blue-100 p-2 rounded">Work / Business Experience</h2>
+            <h2 className="text-lg font-bold bg-green-100 p-2 rounded">Work / Business Experience</h2>
 
             <div className="p-4 bg-white shadow rounded">
                 {/* Selected Option */}
                 <div className="mb-6">
                 <label className="block font-medium mb-1">Selected Option:</label>
-                <p className="text-blue-700 font-semibold">
+                <p className="text-green-700 font-semibold">
                     {selectedOption === 'Work' && 'Work'}
                     {selectedOption === 'Business' && 'Business'}
                     {selectedOption === 'Both' && 'Work / Business'}
@@ -240,7 +241,7 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
 
 {/* =============================== Bank Account details =============================== */} 
       <section className="mb-8">
-      <h2 className="text-lg font-bold bg-blue-100 p-2 rounded">Bank Account Details</h2>
+      <h2 className="text-lg font-bold bg-green-100 p-2 rounded">Bank Account Details</h2>
 
       <div className="p-4 bg-white shadow rounded">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -269,7 +270,7 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
 {/* =============================== UNS details =============================== */} 
       {/* UNS Details */}
       <section className="mb-10">
-      <h2 className="text-lg font-bold bg-blue-100 p-2 rounded">UNS Details</h2>
+      <h2 className="text-lg font-bold bg-green-100 p-2 rounded">UNS Details</h2>
 
       <div className="p-4 bg-white shadow rounded space-y-6">
         {/* UNS Roles */}
@@ -300,7 +301,7 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
 
         {/* USDT Own Investments */}
         <div>
-          <h3 className="font-semibold text-blue-700">USDT Own Investments</h3>
+          <h3 className="font-semibold text-green-700">USDT Own Investments</h3>
           <div className="grid gap-4 mt-2">
             {employeeDetails?.usdt_own_value?.map((item, idx) => (
               <div key={idx} className="border p-3 rounded">
@@ -314,7 +315,7 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
 
         {/* USDT Referral Investments */}
         <div>
-          <h3 className="font-semibold text-blue-700">Referral Investments</h3>
+          <h3 className="font-semibold text-green-700">Referral Investments</h3>
           <div className="grid gap-4 mt-2">
             {employeeDetails?.usdt_ref_value?.map((item, idx) => (
               <div key={idx} className="border p-3 rounded">
@@ -334,7 +335,7 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
 
         {/* UNSRET Investments */}
         <div>
-          <h3 className="font-semibold text-blue-700">UNSRET Investments</h3>
+          <h3 className="font-semibold text-green-700">UNSRET Investments</h3>
           <div className="grid gap-4 mt-2">
             {employeeDetails?.unsret_value?.map((item, idx) => (
               <div key={idx} className="border p-3 rounded">
@@ -360,7 +361,7 @@ const showBusiness = selectedOption === 'Business' || selectedOption === 'Both';
         </p>
 
         <div>
-          <h3 className="font-semibold text-blue-700">REPNFT Investments</h3>
+          <h3 className="font-semibold text-green-700">REPNFT Investments</h3>
           <div className="grid gap-4 mt-2">
             {employeeDetails?.repnft_value?.map((item, idx) => (
               <div key={idx} className="border p-3 rounded">

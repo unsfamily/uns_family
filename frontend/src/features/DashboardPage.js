@@ -82,63 +82,64 @@ const DashboardPage = ({ employeeDetails }) => {
     <>
       <Header />
 
-      <div className="container mx-auto px-4 py-4">
-        <div className="bg-white shadow rounded-lg p-6 mb-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="border-r">
-              <div className="flex flex-col items-center mt-4">
+      <div className="px-4 sm:px-6 lg:px-20 py-4 max-w-7xl mx-auto">
+        <div className="bg-white shadow rounded-lg p-6 mb-6 border">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            {/* Left Section */}
+            <div className="lg:col-span-4">
+              <div className="flex flex-col items-center">
                 <img
                   src={employeeDetails?.profile_picture}
                   alt="Profile"
-                  className="rounded mb-2 w-48 h-48 object-cover"
+                  className="rounded w-32 h-32 object-cover mb-2"
                 />
-                <div className="text-center text-lg font-medium">
+                <div className="text-lg font-semibold text-green-700">
                   {employeeDetails?.first_name} {employeeDetails?.last_name}
                 </div>
-                <div className="text-center text-sm text-gray-600">
-                  {employeeDetails?.role_uns}
+                <div className="text-sm text-gray-500">{employeeDetails?.role_uns}</div>
+              </div>
+
+              <div className="mt-6 space-y-1 text-sm">
+                <h5 className="text-md font-semibold text-green-700 mb-2">Profile Details</h5>
+                <div><strong>Employee ID:</strong> {employeeDetails?.mobile_number}</div>
+                <div><strong>Phone:</strong> {employeeDetails?.mobile_number}</div>
+                <div><strong>Whatsapp Number:</strong> {employeeDetails?.whatsapp_number}</div>
+                <div><strong>Email Id:</strong> {employeeDetails?.email_id}</div>
+                <div>
+                  <strong>Address:</strong> {employeeDetails?.building_street}, {employeeDetails?.city}, {employeeDetails?.district}, {employeeDetails?.country}, {employeeDetails?.pincode}
                 </div>
               </div>
-            </div>
 
-            <div className="border-r">
-              <h5 className="text-md font-semibold p-2">Profile Details</h5>
-              <div className="p-2"><span className="font-medium">Employee ID: </span>{employeeDetails?.mobile_number}</div>
-              <div className="p-2"><span className="font-medium">Phone: </span>{employeeDetails?.mobile_number}</div>
-              <div className="p-2"><span className="font-medium">Whatsapp Number: </span>{employeeDetails?.whatsapp_number}</div>
-              <div className="p-2"><span className="font-medium">Email Id: </span>{employeeDetails?.email_id}</div>
-              <div className="p-2">
-                <span className="font-medium">Address: </span>
-                {employeeDetails?.building_street}, {employeeDetails?.city}, {employeeDetails?.district}, {employeeDetails?.country}, {employeeDetails?.pincode}
-              </div>
-            </div>
-
-            <div>
-              <h5 className="text-md font-semibold p-2">Business Details</h5>
-              <div className="p-2"><span className="font-medium">Total Business in USDT: </span>{employeeDetails?.investment_through_referral}</div>
-              <div className="p-2"><span className="font-medium">USDT invested (Own): </span>{employeeDetails?.total_own_usdt}</div>
-              <div className="p-2 mt-2">
+              <div className="mt-6 space-y-1 text-sm">
+              <h5 className="text-md font-semibold text-green-700 mb-2">Business Details</h5>
+              <div><span className="font-medium">Total Business in USDT: </span>{employeeDetails?.investment_through_referral}</div>
+              <div><span className="font-medium">USDT invested (Own): </span>{employeeDetails?.total_own_usdt}</div>
+              <div>
                 <h5 className="text-md font-semibold">Announcement</h5>
                 <p className="text-sm text-gray-600">Description Details</p>
               </div>
             </div>
+            </div>
+
+            {/* Right Section */}
+            <div className="lg:col-span-8  border-l-2 border-green-500">
+              <Step9UnsRoles
+                register={register}
+                watch={watch}
+                totalOwn={totalOwn}
+                totalReferral={totalReferral}
+                unsretTotal={unsretTotal}
+                unsretReward={unsretReward}
+                repnftTotal={repnftTotal}
+                repnftReward={repnftReward}
+                ownInvestments={ownInvestments}
+                referralInvestments={referralInvestments}
+                unsretNfts={unsretNfts}
+                repnftNfts={repnftNfts}
+              />
+            </div>
           </div>
         </div>
-
-        <Step9UnsRoles
-          register={register}
-          watch={watch}
-          totalOwn={totalOwn}
-          totalReferral={totalReferral}
-          unsretTotal={unsretTotal}
-          unsretReward={unsretReward}
-          repnftTotal={repnftTotal}
-          repnftReward={repnftReward}
-          ownInvestments={ownInvestments}
-          referralInvestments={referralInvestments}
-          unsretNfts={unsretNfts}
-          repnftNfts={repnftNfts}
-        />
 
         <div className="mt-8">
           <h5 className="text-lg font-semibold border-b pb-2 mb-4">Video</h5>
@@ -148,24 +149,25 @@ const DashboardPage = ({ employeeDetails }) => {
               href="https://www.youtube.com/@SureshSathyanarayanan"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 underline"
+              className="text-green-600 underline"
             >
               Visit Suresh Sathyanarayanan's Channel
             </a>
           </div>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-6 justify-center">
             <iframe
-              width="560"
-              height="315"
+              width="360"
+              height="215"
               src="https://www.youtube.com/embed/ohNzIgYIjHU"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              className="rounded shadow"
             ></iframe>
             <iframe
-              width="560"
-              height="315"
+              width="360"
+              height="215"
               src="https://www.youtube.com/embed/ZnIDxY17eBs?start=206"
               title="YouTube video player"
               frameBorder="0"
