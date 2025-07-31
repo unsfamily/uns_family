@@ -5,6 +5,8 @@ import RegisterPage from "../features/RegisterPage";
 import HomePage from "../features/HomePage";
 import DashboardPage from "../features/DashboardPage";
 import EmployeeData from "../features/EmployeeData";
+import AdminDashboard from "../features/AdminDashboard";
+import EmployeeList from "../features/EmployeeList";
 
 
 const Home = () => (
@@ -18,6 +20,8 @@ const AppRoutes = () => (
     <Route path="/register" element={<RegisterPage />} />
     <Route path="/dashboard" element={<DashboardPage />} />
     <Route path="/employeedata" element={<EmployeeData />} />
+    <Route path="/admindashboard" element={<AdminDashboard />} />
+    <Route path="/employeelist" element={<EmployeeList />} />
 
     {/* Add protected/private routes here */}
   </Routes>
